@@ -26,14 +26,12 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+mu = mean(X_norm);
+sigma = std(X_norm);
 
+room_size_feature = (X_norm(:,1) - mu(1))/sigma(1);
+num_rooms_feature = (X_norm(:,2) - mu(2))/sigma(2);
 
-
-
-
-
-
-
-% ============================================================
+X_norm = horzcat(room_size_feature, num_rooms_feature);
 
 end
